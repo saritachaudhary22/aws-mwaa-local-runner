@@ -19,8 +19,8 @@ from airflow.providers.snowflake.operators.snowflake import SnowflakeOperator
 from airflow.utils.dates import days_ago
 
 snowflake_query = [
-    """use warehouse "MY_WAREHOUSE";""",
-    """select * from "SNOWFLAKE_SAMPLE_DATA"."WEATHER"."WEATHER_14_TOTAL" limit 100;""",
+    """use warehouse "WH_DAA_DEVANALYSIS";""",
+    """select * from "EDW"."SBX_TRANSIENT"."AIRFLOW_SAMPLE" ;""",
 ]
 
 with DAG(dag_id='snowflake_test', schedule_interval=None, catchup=False, start_date=days_ago(1)) as dag:
